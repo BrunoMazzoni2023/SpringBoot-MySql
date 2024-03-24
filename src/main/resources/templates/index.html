@@ -10,24 +10,25 @@
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
-  
+  <h3><a href="/" class="waves-effect waves-light btn">Voltar</a></h3>
 	<h1>Lista de Eventos:</h1>
-	<h3><a href="/eventos" class="waves-effect waves-light btn">Eventos Cadastrados</a></h3>
+	
+	<h3><a href="/eventos" class="waves-effect waves-light btn">Eventos Cadastrados</a></h3><br>
 	
 	<h3><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></h3>
 
-	<table>
+	<table CLASS="container">
 	<thead>
 	<tr>
-		<td>Nome</td>
-		<td>Local</td>
-		<td>Data</td>
-		<td>Horário</td>
+		<th>Nome</th>
+		<th>Local</th>
+		<th>Data</th>
+		<th>Horário</th>
 		</tr>
 	</thead>
 	<tbody>
   <tr th:each="evento : ${eventos}">
-  	<td><span th:text="${evento.nome}"></span> </td>
+  	<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a> </td>
   	<td><span th:text="${evento.local}"></span> </td>
   	<td><span th:text="${evento.data}"></span> </td>
   	<td><span th:text="${evento.horario}"></span> </td>

@@ -14,13 +14,18 @@
     <h3><a href="/evento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Eventos</a></h3>
 	<h1>Detalhes Eventos:</h1>
 	<div th:each="evento : ${evento}" class="container">
-	<div class"row">
+	<div class="row">
 		<p>NOME:<span th:text="${evento.nome}"></span></p>
 		<p>LOCAL:<span th:text="${evento.local}"></span></p>
 		<p>DATA:<span th:text="${evento.data}"></span></p>
 		<p>HORÁRIO:<span th:text="${evento.horario}"></span></p>
-		
 	</div>
+	
+	<form method="post">
+	Nome: <input type="text" value="" name="nomeConvidado"/>
+	Rg: <input type="text" value="" name="rg"/>
+	<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
+	</form>
 	
 	
 	

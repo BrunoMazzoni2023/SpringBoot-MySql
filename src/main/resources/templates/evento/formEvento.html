@@ -10,6 +10,17 @@
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Lista de Eventos</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/" class="waves-effect waves-light btn">Voltar</a></li>
+ 
+      </ul>
+    </div>
+  </nav>
+</header>
     <h3><a href="/" class="waves-effect waves-light btn">Voltar</a></h3>
 	<h1>Cadastro de Eventos:</h1>
 	<form class="container"  method="post">
@@ -22,7 +33,7 @@
 			Data: <input type="date" value="" name="data"/>
 		</div>
 		<div class="input-field col s3">
-			Horário: <input type="text" value="" name="horario"/>
+			Horário: <input type="time" value="" name="horario"/>
 		</div>
 		</div>
 		<button class="waves-effect waves-light btn" type="submit">Salvar</button>

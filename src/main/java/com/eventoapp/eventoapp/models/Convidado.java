@@ -4,10 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
+
 @Entity
 public class Convidado {
 	
 	@Id
+
 	private String rg;
 	private String nomeConvidado;
 	

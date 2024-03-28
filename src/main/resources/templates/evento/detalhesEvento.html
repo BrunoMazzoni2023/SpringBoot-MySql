@@ -21,24 +21,30 @@
 		<p>HORÁRIO:<span th:text="${evento.horario}"></span></p>
 	</div>
 	
+	<th:block th:include="mensagemValidacao"></th:block>
+	
 	<form method="post">
 	Nome: <input type="text" value="" name="nomeConvidado"/>
 	Rg: <input type="text" value="" name="rg"/>
 	<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
 	</form>
 	
-	<div class="container" th:each="convidado : ${convidados}">
-	<h5>Lista Convidados</h5>
-		<div class="row">
-			<div class="input.field col s6">
-		NOME:<p><span th:text="${convidado.nomeConvidado}"></span></p>
-			</div>	
-			<div class="input.field col s3">
-		RG:<p><span th:text="${convidado.rg}"></span></p>
-			</div>
-		</div>
-	</div>
-	</div>
+		<h5>Lista Convidados</h5>
+	<table class="container">
+			<thead>
+				<tr>
+					<th>Nome Convidado</th>
+					<th>RG</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="convidado : ${convidados}">
+				<td><span th:text="${convidado.nomeConvidado}"></span></td>
+				<td><span th:text="${convidado.rg}"></span></td>
+				</tr>
+			</tbody>	
+	</table>
+	
   <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 
